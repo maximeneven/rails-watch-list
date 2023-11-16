@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  .bottom-card{
+    display:flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+}
+
+.btn-delete{
+  color: white;
+  background-color: rgb(209, 25, 25);
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 4px;
+  padding: 10px;
+
+
+  &hover{
+    color: grey;
+  }
+}

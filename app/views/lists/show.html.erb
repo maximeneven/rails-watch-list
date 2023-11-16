@@ -1,0 +1,24 @@
+<div class="container">
+    <p><strong>List</strong></p>
+    <%= @list.name %>
+    <br>
+    <%= link_to "Back to all lists", root_path %>
+    <%= link_to "New bookmark", new_list_bookmark_path(@list) %>
+
+  <div class="row">
+    <p><strong>Bookmarks</strong></p>
+      <% @list.bookmarks.each do |bookmark| %>
+      <div class="card col mx-4">
+        <img src="<%=bookmark.movie.poster_url%>" alt="Movie poster">
+        <h3><%= bookmark.movie.title %></h3>
+        <p><%= bookmark.movie.overview %></p>
+        <div class="bottom-card">
+           <p class="list-group-item"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></p>
+          <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+            <p class="btn-delete">Delete </p>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
